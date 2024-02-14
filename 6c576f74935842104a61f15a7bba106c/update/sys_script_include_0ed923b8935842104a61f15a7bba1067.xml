@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1138257_learn_se.Member Query</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Member Query</name>
+        <script><![CDATA[//Abfrage für die Gruppe
+let gruppenAbfrage = new GlideRecord('sys_user_grmember');
+gruppenAbfrage.addQuery('group.name', gruppenName);
+gruppenAbfrage.query();
+
+//Mitglieder zählen
+let mitgliederAnzahl = gruppenAbfrage.getRowCount();
+
+//Ausgabe der Anzahl der Mitglieder
+gs.info('Die Anzahl der Mitglider in der Gruppe ' + gruppenName + ' beträgt ' + mitgliederAnzahl + ' Personen und einen Admin');]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-02-09 15:40:52</sys_created_on>
+        <sys_id>0ed923b8935842104a61f15a7bba1067</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Member Query</sys_name>
+        <sys_package display_value="Learn ServiceNow" source="x_1138257_learn_se">6c576f74935842104a61f15a7bba106c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Learn ServiceNow">6c576f74935842104a61f15a7bba106c</sys_scope>
+        <sys_update_name>sys_script_include_0ed923b8935842104a61f15a7bba1067</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-02-09 15:40:52</sys_updated_on>
+    </sys_script_include>
+</record_update>
